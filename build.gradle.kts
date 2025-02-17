@@ -21,14 +21,14 @@ repositories {
 
 dependencies {
 	// Database driver
-    implementation("org.postgresql:postgresql:42.3.1")
+    runtimeOnly("org.postgresql:postgresql:42.7.5")
 
 	// service dependencies
 	implementation("org.projectlombok:lombok:latest.release")
 	annotationProcessor("org.projectlombok:lombok:latest.release")
 	implementation("org.springframework.boot:spring-boot-starter-security")
 	implementation("org.springframework.boot:spring-boot-starter-web")
-	implementation("org.liquibase:liquibase-core")
+	//implementation("org.liquibase:liquibase-core")
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.springframework.boot:spring-boot-starter-validation")
 	developmentOnly("org.springframework.boot:spring-boot-devtools")

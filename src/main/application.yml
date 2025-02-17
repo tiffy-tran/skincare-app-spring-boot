@@ -1,21 +1,17 @@
-application:
-  name: skincare-diary-spring-boot
-
 spring:
   profiles:
     active: local
-
 ---
 spring:
+  application:
+    name: skincare-diary-spring-boot
   profile: local
-  datasource:
-    url: jdbc:postgresql://localhost:5432/skincarediary
-    username: admin
-    password: admin
-    driver-class-name: org.postgresql.Driver
   jpa:
+    database: POSTGRESQL
     database-platform: org.hibernate.dialect.PostgreSQLDialect
-    # hibernate:
-    #   ddl-auto: update
-  liquibase:
-    change-log: classpath:/liquibase/changelog-master.xml
+    hibernate:
+      ddl-auto: none
+  # liquibase:
+  #   change-log: classpath:db/changelog/changelog-master.xml
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
