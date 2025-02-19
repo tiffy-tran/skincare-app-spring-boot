@@ -1,0 +1,76 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: "myself"
+      changes:
+        - createTable:
+            tableName: product
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: category
+                  type: text
+                  constraints:
+                    nullable: false
+              - column:
+                  name: image_url
+                  type: text
+                  constraints:
+                    nullable: false
+              - column:
+                  name: image_alt_str
+                  type: text
+                  constraints:
+                    nullable: false
+              - column:
+                  name: brand
+                  type: text
+                  constraints:
+                    nullable: false
+              - column:
+                  name: product_name
+                  type: text
+                  constraints:
+                    nullable: false
+              - column:
+                  name: price
+                  type: float
+                  constraints:
+                    nullable: false
+              - column:
+                  name: volume_weight
+                  type: float
+                  constraints:
+                    nullable: false
+              - column:
+                  name: units
+                  type: text # Specify the type here
+              - column:
+                  name: country_of_origin
+                  type: text
+                  constraints:
+                    nullable: false
+              - column:
+                  name: purchase_link
+                  type: text
+                  constraints:
+                    nullable: false
+              - column:
+                  name: description
+                  type: text
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: text
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: text
+                  constraints:
+                    nullable: false
