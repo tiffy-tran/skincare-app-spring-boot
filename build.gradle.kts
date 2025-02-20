@@ -42,9 +42,3 @@ dependencies {
 tasks.withType<Test> {
 	useJUnitPlatform()
 }
-
-
-
-// tasks.withType<BootRun> {
-//     args = listOf("--spring.profiles.active=local")
-// }
