@@ -8,11 +8,18 @@ databaseChangeLog:
             columns:
               - column:
                   name: id
-                  type: int
+                  type: bigint
                   constraints:
                     primaryKey: true
+                    nullable: false
+                    autoIncrement: true
               - column:
-                  name: category
+                  name: parent_category
+                  type: text
+                  constraints:
+                    nullable: false
+              - column:
+                  name: sub_category
                   type: text
                   constraints:
                     nullable: false
@@ -38,17 +45,19 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: price
-                  type: float
+                  type: numeric(4,2)
                   constraints:
                     nullable: false
               - column:
                   name: volume_weight
-                  type: float
+                  type: numeric(4,4)
                   constraints:
                     nullable: false
               - column:
                   name: units
-                  type: text # Specify the type here
+                  type: text
+                  constraints:
+                    nullable: false
               - column:
                   name: country_of_origin
                   type: text
@@ -66,11 +75,11 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: created_at
-                  type: text
+                  type: timestamptz
                   constraints:
                     nullable: false
               - column:
                   name: updated_at
-                  type: text
+                  type: timestamptz
                   constraints:
                     nullable: false

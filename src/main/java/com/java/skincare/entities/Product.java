@@ -4,23 +4,29 @@ import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "users")
+@Table(name = "product")
 @Getter
 @Setter
 public class Product {
 
     @Id
-    @Column(name = "id")
+    @Column(name = "id", updatable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Auto-incrementing strategy
     private Long id;
 
-    @Column(name = "category")
-    private String category;
+    @Column(name = "parent_category")
+    private String parentCategory;
+
+    @Column(name = "sub_category")
+    private String subCategory;
 
     // TODO this should be the image S3 url
     @Column(name = "image_url")
