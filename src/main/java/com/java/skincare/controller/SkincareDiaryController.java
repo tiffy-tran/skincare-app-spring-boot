@@ -25,6 +25,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 public class SkincareDiaryController {
 
     // TODO add endpoints for calendar events
+    // TODO add endpoint to delete product? soft delete?
 
     @Autowired
     private SkincareDiaryService skincareDiaryService;
@@ -58,7 +59,7 @@ public class SkincareDiaryController {
     }
 
     @PatchMapping("/updateProduct")
-    public ResponseEntity<ProductInfo> updateProductInfo(ProductInfo updatedProductInfo) {
+    public ResponseEntity<ProductInfo> updateProductInfo(@RequestBody ProductInfo updatedProductInfo) {
         try {
             ProductInfo pi = skincareDiaryService.updateProduct(updatedProductInfo);
             return ResponseEntity.ok(pi);

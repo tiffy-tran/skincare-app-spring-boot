@@ -10,13 +10,15 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 public class SecurityConfig {
 
-    // TODO add actual authentication and authorization logic here
+    // TODO add oauth here
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        return http
-                // TODO setup Oauth here
-                .authorizeHttpRequests(request -> request
-                        .anyRequest().denyAll())
-                .build();
+        http
+                .csrf(csrf -> csrf.disable()) // Disable CSRF for now
+                .authorizeHttpRequests((requests) -> requests
+                        .requestMatchers("/api/v1/skincare-diary/**").permitAll()
+                        .anyRequest().authenticated());
+
+        return http.build();
     }
 }

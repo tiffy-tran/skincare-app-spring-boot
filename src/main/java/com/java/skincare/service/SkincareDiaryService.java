@@ -66,7 +66,7 @@ public class SkincareDiaryService {
                 try {
                     field.setAccessible(true); // TODO need? allows access to private fields
                     Object value = field.get(updatedProductDetails);
-                    if (value != null) {
+                    if (field.getName() != "id" && value != null) {
                         Field entityField = Product.class.getDeclaredField(field.getName());
                         entityField.setAccessible(true); // Allow access to private fields
                         entityField.set(existingProduct, value);

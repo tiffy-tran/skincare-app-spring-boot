@@ -8,11 +8,10 @@ databaseChangeLog:
             columns:
               - column:
                   name: id
-                  type: bigint
+                  type: serial
                   constraints:
                     primaryKey: true
                     nullable: false
-                    autoIncrement: true
               - column:
                   name: parent_category
                   type: text
@@ -50,7 +49,7 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: volume_weight
-                  type: numeric(4,4)
+                  type: numeric(4,2)
                   constraints:
                     nullable: false
               - column:
